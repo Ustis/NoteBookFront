@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox alignment="CENTER" prefHeight="1000.0" prefWidth="1920.0" spacing="20.0" xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ustis.notebookfront.NoteBookController">
+    <padding>
+        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+    </padding>
+    <SplitPane dividerPositions="0.21746575342465754" prefHeight="900.0" prefWidth="1880.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <items>
+            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+                <children>
+                    <SplitPane dividerPositions="0.1015625" orientation="VERTICAL" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                        <items>
+                            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="109.0" prefWidth="161.0">
+                                <children>
+                                    <TextField fx:id="selectedNoteTF" layoutX="6.0" layoutY="2.0" prefHeight="25.0" prefWidth="197.0" />
+                                    <Button fx:id="deleteBtn" layoutX="155.0" layoutY="35.0" mnemonicParsing="false" onMouseClicked="#deleteNote" text="Удалить" />
+                                    <Button fx:id="updateBtn" layoutX="81.0" layoutY="35.0" mnemonicParsing="false" onMouseClicked="#updateNote" text="Обновить" />
+                                    <Button fx:id="createNote" layoutX="6.0" layoutY="35.0" mnemonicParsing="false" onMouseClicked="#createNote" text="Добавить" />
+                           <ChoiceBox fx:id="pageTypeCB" layoutX="212.0" layoutY="2.0" prefHeight="25.0" prefWidth="191.0" />
+                                </children>
+                            </AnchorPane>
+                            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
+                                <children>
+                                    <ListView fx:id="notes" onMouseClicked="#openNote" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                                </children>
+                            </AnchorPane>
+                        </items>
+                    </SplitPane>
+                </children>
+            </AnchorPane>
+            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+                <children>
+                    <TextArea fx:id="simpleNoteTA" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                    <SplitPane fx:id="todoTreeBlock" dividerPositions="0.1015625" orientation="VERTICAL" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                        <items>
+                            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
+                        <children>
+                           <Button fx:id="addTodoNodeBTN" layoutX="14.0" layoutY="47.0" mnemonicParsing="false" onMouseClicked="#addTodoNode" text="Добавить" />
+                           <TextField fx:id="selectedTodoNodeTF" layoutX="14.0" layoutY="14.0" prefHeight="25.0" prefWidth="218.0" />
+                           <Button fx:id="updateTodoNodeBTN" layoutX="89.0" layoutY="47.0" mnemonicParsing="false" onMouseClicked="#changeTodoNode" text="Обновить" />
+                           <Button fx:id="deleteTodoNodeBTN" layoutX="170.0" layoutY="47.0" mnemonicParsing="false" onMouseClicked="#deleteTodoNode" text="Удалить" />
+                        </children></AnchorPane>
+                            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
+                                <children>
+                                    <TreeView fx:id="todoListTV" onMouseClicked="#updateSelectedTodoNodeTF" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                                </children>
+                            </AnchorPane>
+                        </items>
+                    </SplitPane>
+                </children>
+            </AnchorPane>
+        </items>
+    </SplitPane>
+    <Button fx:id="saveNoteBTN" mnemonicParsing="false" onMouseClicked="#saveNote" text="Сохранить" />
+</VBox>
